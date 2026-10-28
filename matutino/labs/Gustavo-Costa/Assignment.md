@@ -298,3 +298,189 @@ public class Q25TemperaturaBooleans {
     }
 }
 ```
+
+**26.** 
+
+```java
+import java.util.Scanner;
+
+public class Q26Segundos {
+    public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Segundos: ");
+        int segundos = sc.nextInt();
+
+        int horas = segundos / 3600;
+        int minutos = (segundos % 3600) / 60;
+        int segundosRestantes = segundos % 60;
+
+        System.out.println("Horas: " + horas + "h" + minutos + "m" + segundosRestantes + "s");
+        
+        sc.close();
+}
+}
+```
+
+**27.**
+
+```java
+import java.util.Scanner;
+
+public class Q27DezenasUnidades {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Digite um número entre 1 e 100: ");
+        int numero = sc.nextInt();
+        
+            int dezenas = numero / 10;
+            int unidades = numero % 10;
+
+            System.out.println("Número invertido: " + unidades + dezenas );
+    }
+}
+```
+
+**28.**
+
+Existem dois erros no código exibido. 1) o tipo atribuído pra totalAlunos e alunosAprovados são inteiros então primeiro se calcula a divisão em inteiro e só depois esse número é transformado em double portanto ao dividir 15/25 fica 0 e só depois ele vira um double. 2) Para se calcular uma porcentagem precisamos multiplicar a dividas de alunosAprovados e totalAlunos por 100 e isso não ocorre no código.
+
+```java
+public class Q28Aprovacao {
+    public static void main(String[] args) {
+        int totalAlunos = 25;
+        int alunosAprovados = 15;
+        double taxaAprovacao = (double) alunosAprovados / totalAlunos * 100;
+        System.out.println("Taxa de aprovação: " + taxaAprovacao + "%");
+    }
+}
+```
+
+**29.**
+
+Está faltando o ; no final do System.out.println(a + " " + b) então é gerado um erro de compilação. Com o ; ao final a saída do código passa a ser: 14 7
+
+```
+
+**30.**
+
+A variável idade está sendo declarada duas vezes (linha 1 e 4) então ao rodar o código o Java não permite duas variáveis com o mesmo nome e aparece o erro variable idade is already defined. Para corrigir basta atribuir o novo valor na quarta linha sem o int:
+
+```java 
+int idade;
+idade = 20;
+int ano = idade + 2000;
+idade = 21;
+System.out.println(idade + ano);
+```
+
+Saída: `2041` (21 + 2020; como os dois são `int`, o `+` soma).
+
+
+**31.**
+
+int quantidadeProdutos;
+double precoUnitarioProduto;
+char categoriaProduto;
+boolean disponibilidadeProduto;
+```
+
+**32.**
+
+O problema é que a media que devia ser calculada em double esta recebendo um valor de soma de dois inteiros e dividindo por um número inteiro o que gera uma divisão sem levar em conta as casas decimais. Para corrigir podemos substituir o 2 por 2.0.
+
+```java
+public class Q32Media {
+    public static void main(String[] args) {
+        int nota1 = 7;
+        int nota2 = 8;
+        double media = (nota1 + nota2) / 2.0;
+        System.out.println(media);
+    }
+}
+```
+
+**33.**
+
+```
+7
+Resultado: 52
+Resultado: 7
+```
+
+**34.**
+
+```java
+import java.util.Scanner;
+
+public class Q34Divisao {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o numerador: ");
+        int numerador = sc.nextInt();
+        System.out.print("Digite o denominador: ");
+        int denominador = sc.nextInt();
+
+        if (denominador == 0) {
+            System.out.println("Não existe divisão por zero.");
+        } else {
+            System.out.println("Quociente: " + (numerador / denominador));
+            System.out.println("Resto: " + (numerador % denominador));
+        }
+        sc.close();
+    }
+}
+```
+
+**35.** 
+
+```java
+import java.util.Scanner;
+
+public class Q35MinutosHoras {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Digite o número de minutos: ");
+        int minutos = sc.nextInt();
+
+        int horas = minutos / 60;
+        int minutosRestantes = minutos % 60;
+
+        System.out.println(minutos + " minutos equivalem a " + horas + " horas e " + minutosRestantes + " minutos.");
+    }
+}
+```
+
+**36.**
+
+```java
+import java.util.Scanner;
+
+public class Q36UnidadesDezenasCentenas {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Digite um número inteiro de três algarismos: ");
+        int numero = sc.nextInt();
+
+        if (numero < 100 || numero > 999) {
+            System.out.println("O número precisa ter três algarismos.");} 
+        else {
+            int centena = numero / 100;
+            int dezena = (numero / 10) % 10;
+            int unidade = numero % 10;
+
+            System.out.println("Centena: " + centena);
+            System.out.println("Dezena: " + dezena);
+            System.out.println("Unidade: " + unidade);
+        }
+        sc.close();
+    }
+}
+```
+
+
+
+
