@@ -362,7 +362,6 @@ public class Q28Aprovacao {
 
 Está faltando o ; no final do System.out.println(a + " " + b) então é gerado um erro de compilação. Com o ; ao final a saída do código passa a ser: 14 7
 
-```
 
 **30.**
 
@@ -404,11 +403,10 @@ public class Q32Media {
 
 **33.**
 
-```
 7
 Resultado: 52
 Resultado: 7
-```
+
 
 **34.**
 
