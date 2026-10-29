@@ -20,4 +20,3 @@ public class Q36UnidadesDezenasCentenas {
         sc.close();
     }
 }
-
